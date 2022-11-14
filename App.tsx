@@ -34,7 +34,7 @@ export default function App() {
     console.log("listening onAuthStateChange -----");
     let { data } = supabase.auth.onAuthStateChange(async (event, session) => {
       console.log("onAuthStateChange----", { event });
-      userSet(session.user);
+      userSet(session?.user);
     });
     return () => {
       console.log("unsub onAuthStateChange -----");
